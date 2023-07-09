@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/detail/{slug}', [FrontendController::class, 'details'])->name('details');
+Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
+Route::get('/checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
 
 Route::middleware([
 	'auth:sanctum',
