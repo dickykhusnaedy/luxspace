@@ -24,7 +24,7 @@ class ProductController extends Controller
 			return DataTables::of($query)
 				->addColumn('action', function ($item) {
 					return '
-						<a class="bg-indigo-500 text-white rounded-lg px-3 py-2 m-2"><i class="fas fa-image"></i></a>
+						<a href="' . route('dashboard.product.gallery.index', $item->id) . '" class="bg-indigo-500 text-white rounded-lg px-3 py-2 m-2"><i class="fas fa-image"></i></a>
 						<a href="' . route('dashboard.product.edit', $item->id) . '" class="bg-black text-white font-bold rounded-lg px-3 py-2 m-2 text-sm"><i class="fas fa-edit"></i></a>
 						<form class="inline-block" action="' . route('dashboard.product.destroy', $item->id) . '" method="post">
 						<button class="bg-red-500 text-white font-bold rounded-lg px-3 py-2 m-2 text-sm"><i class="fas fa-trash"></i></button>
