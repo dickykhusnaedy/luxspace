@@ -28,6 +28,12 @@ Route::get('/detail/{slug}', [FrontendController::class, 'details'])->name('deta
 Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
 Route::get('/checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
 
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+	Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
+	Route::post('/cart/{id}', [FrontendController::class, 'cartAdd'])->name('cart-add');
+	Route::get('/checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
+});
+
 /**
  * Dashboard routes
  */

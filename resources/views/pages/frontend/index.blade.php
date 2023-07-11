@@ -141,7 +141,8 @@
                 src="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw== ?>' }}"
                 alt="" class="w-full h-full object-cover object-center" />
             </div>
-            <h5 class="text-lg font-semibold mt-4">{{ $product->name }}</h5>
+            <h5 class="text-lg font-semibold mt-4">
+              {{ Str::length($product->name) > 30 ? Str::substr($product->name, 0, 30) . '...' : $product->name }}</h5>
             <span class="">Rp{{ number_format($product->price) }}</span>
             <a href="{{ route('details', $product->slug) }}" class="stretched-link"></a>
           </div>
