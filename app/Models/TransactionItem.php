@@ -13,8 +13,8 @@ class TransactionItem extends Model
 		'users_id', 'products_id', 'transactions_id'
 	];
 
-	public function transaction()
+	public function product()
 	{
-		return $this->hasOne(Transaction::class, 'transactions_id', 'id');
+		return $this->hasOne(Product::class, 'id', 'products_id');
 	}
 }
