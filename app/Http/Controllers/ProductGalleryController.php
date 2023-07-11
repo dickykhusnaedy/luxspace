@@ -24,7 +24,7 @@ class ProductGalleryController extends Controller
 			return DataTables::of($query)
 				->addColumn('action', function ($item) {
 					return '
-						<form class="inline-block" action="' . route('dashboard.product.gallery.destroy', $item->id) . '" method="post">
+						<form class="inline-block" action="' . route('dashboard.gallery.destroy', $item->id) . '" method="post">
 							<button class="bg-red-500 text-white font-bold rounded-lg px-3 py-2 m-2 text-sm"><i class="fas fa-trash"></i></button>
 						' . method_field('delete') . csrf_field() . '
 						</form>
@@ -118,6 +118,6 @@ class ProductGalleryController extends Controller
 	{
 		$gallery->delete();
 
-		return redirect()->route('dashboard.product.gallery.index', $gallery->id);
+		return redirect()->route('dashboard.product.gallery.index', $gallery->products_id);
 	}
 }
