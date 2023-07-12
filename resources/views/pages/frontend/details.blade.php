@@ -94,7 +94,7 @@
                   alt="Foto {{ $item->name }}" class="w-full h-full object-cover object-center" />
               </div>
               <h5 class="text-lg font-semibold mt-4">
-                {{ Str::length($item->name) > 30 ? Str::substr($item->name, 0, 30) . '...' : $item->name }}</h5>
+                {{ Str::length($item->name) > 28 ? Str::substr($item->name, 0, 28) . '...' : $item->name }}</h5>
               <span class="">Rp{{ number_format($item->price) }}</span>
               <a href="{{ route('details', $item->slug) }}" class="stretched-link">
                 <!-- fake children -->
