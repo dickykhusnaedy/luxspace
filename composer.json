@@ -17,6 +17,7 @@
         "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^2.5",
+        "midtrans/midtrans-php": "^2.5",
         "yajra/laravel-datatables-oracle": "^9.0"
     },
     "require-dev": {
